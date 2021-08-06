@@ -1,5 +1,6 @@
 #map {
 	bottom: 0;
+	height: var(--mapHeight);
 	position: fixed;
 	top: 60px;
 	width: 50%;

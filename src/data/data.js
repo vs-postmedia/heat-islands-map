@@ -1,51 +1,33 @@
 module.exports = {
-		'baker': {
-		bearing: 27,
-		center: [-0.15591514, 51.51830379],
-		zoom: 15.5,
-		pitch: 20
+	'intro': {
+		bearing: 0,
+		center: [-123.0367753913065, 49.25366458504647],
+		zoom: 10,
+		pitch: 15
 	},
-		'aldgate': {
-		duration: 6000,
-		center: [-0.07571203, 51.51424049],
-		bearing: 150,
-		zoom: 15,
-		pitch: 0
+	'step-01': {
+		duration: 1000,
+		center: [-123.0367753913065, 49.25366458504647],
 	},
-		'london-bridge': {
-		bearing: 90,
-		center: [-0.08533793, 51.50438536],
-		zoom: 13,
-		speed: 0.6,
-		pitch: 40
+	'step-02': {
+		center: [-123.09140662268823, 49.27909232103973],
+		zoom: 12,
+		duration: 1000
+		// speed: 1,
 	},
-		'woolwich': {
-		bearing: 90,
-		center: [0.05991101, 51.48752939],
-		zoom: 12.3
+	'step-03': {
+		center: [-123.01351455339734, 49.26507026387132],
+		zoom: 12,
+		duration: 1000
 	},
-		'gloucester': {
-		bearing: 45,
-		center: [-0.18335806, 51.49439521],
-		zoom: 15.3,
-		pitch: 20,
-		speed: 0.5
+	'step-04': {
+		center: [-122.9267075230023, 49.209624570510506],
+		zoom: 12,
+		duration: 1000
 	},
-		'caulfield-gardens': {
-		bearing: 180,
-		center: [-0.19684993, 51.5033856],
-		zoom: 12.3
+	'step-05': {
+		center: [-122.86797343302935, 49.148023064067324],
+		zoom: 12,
+		duration: 1000
 	},
-		'telegraph': {
-		bearing: 90,
-		center: [-0.10669358, 51.51433123],
-		zoom: 17.3,
-		pitch: 40
-	},
-		'charing-cross': {
-		bearing: 90,
-		center: [-0.12416858, 51.50779757],
-		zoom: 14.3,
-		pitch: 20
-	}
 };

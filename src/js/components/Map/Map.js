@@ -8,18 +8,25 @@ let map;
 
 
 function init(data, options) {
-	console.log(data)
+	console.log(options)
 
 	map = new maplibregl.Map({
-		container: 'map',
-		style: options.mapboxStyle,
-		center: options.center,
-		zoom: options.zoom,
 		bearing: options.bearing,
-		pitch: options.pitch	
+		center: options.center,
+		container: 'map',
+		maxZoom: options.maxZoom,
+		minZoom: options.minZoom,
+		pitch: options.pitch,
+		style: options.mapboxStyle,
+		// style: setRasterLstLayer(options),
+		zoom: options.zoom
 	});
 
-	addCensusLayer(data, options);
+	map.on('load', () => {
+		options.layer = getInputLayer('symbol');
+	});
+
+	addCensusLayer(options);
 
 	// On every scroll event, check which element is on screen
 	window.onscroll = (map) => {
@@ -29,15 +36,17 @@ function init(data, options) {
 			const section = sections[i];
 
 			if (isElementOnScreen(section)) {
-				setActiveChapter(section, options.activeSection, data);
+				setActiveChapter(section, options, data);
 				break;
 			}
 		}
 	};
 }
 
-function addCensusLayer(data, options) {
+function addCensusLayer(options) {
 	const metric = '_median';
+
+	console.log(metric)
 
 	map.on('load', () => {
 		map.addSource('lst', {
@@ -55,7 +64,7 @@ function addCensusLayer(data, options) {
 			'fill-color': [
 					'step',
 					['get', metric],
-					'rgba(255,245,240,0.3)',
+					'rgba(255,245,240,0.45)',
 					308.03,
 					'#fed6c4',
 					311.42,
@@ -73,7 +82,7 @@ function addCensusLayer(data, options) {
 				],
 				'fill-opacity': 0.45
 			}
-		});
+		}, options.layer);
 
 		// LINES
 		map.addLayer({
@@ -85,12 +94,46 @@ function addCensusLayer(data, options) {
         		'line-color': 'rgba(255,255,255, 0.25)',
         		'line-width': 0.75
         	}
-		});
+		}, options.layer);
 	});
 }
 
-function setActiveChapter(section, activeSection, data) {
+function changeMapStyle(data, options, style, census) {
+	map.setStyle(style);
+
+	// add census data
+	if (census) {
+		addCensusLayer(options);
+	}
+}
+
+function getInputLayer(layerType) {
+	let layer;
+	const layers = map.getStyle().layers;
+	
+	for (let i = 0; i < layers.length; i++) {
+		if (layers[i].type === layerType) {
+			layer = layers[i].id;
+			break;
+		}
+	}
+
+	return layer;
+}
+
+function isElementOnScreen(id) {
+	var element = document.getElementById(id);
+	var bounds = element.getBoundingClientRect();
+
+	return bounds.top < (window.innerHeight * 2) && bounds.bottom > 0;
+}
+
+function setActiveChapter(section, options, data) {
+	let activeSection = options.activeSection;
+
 	if (section === activeSection) return;
+	// if (section === 'step-01') changeMapStyle(data, options, options.mapboxStyle, true);
+	// if (section === 'intro') changeMapStyle(data, options, setRasterLstLayer(options), false);
 	 
 	map.flyTo(data[section]);
 	 
@@ -100,11 +143,29 @@ function setActiveChapter(section, activeSection, data) {
 	activeSection = section;
 }
 
-function isElementOnScreen(id) {
-	var element = document.getElementById(id);
-	var bounds = element.getBoundingClientRect();
-
-	return bounds.top < (window.innerHeight * 2) && bounds.bottom > 0;
+function setRasterLstLayer(options) {
+	return {
+			'version': 8,
+			'sources': {
+				'raster-tiles': {
+					'type': 'raster',
+					'tiles': [options.rasterLayer],
+					'tileSize': 256,
+					'attribution':
+					'Data from <a target="_top" rel="noopener" 	href="https://www.sentinel-hub.com/">Sentinel Hub</a> and <a 	target="_top" rel="noopener" href="https://www.esa.int/">ESA</a>.'
+				}
+			},
+			'layers': [
+				{
+					'id': 'simple-tiles',
+					'type': 'raster',
+					'source': 'raster-tiles',
+					'minzoom': 0,
+					'maxzoom': 22
+				}
+			]
+		}
 }
+
 
 export default { init };
