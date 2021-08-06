@@ -1,5 +1,4 @@
 import maplibregl from 'maplibre-gl';
-// import mapboxConfig from '../../data/mapbox-config';
 
 // CSS
 import './Map.css';
@@ -20,8 +19,10 @@ function init(data, options) {
 		pitch: options.pitch	
 	});
 
+	addCensusLayer(data, options);
+
 	// On every scroll event, check which element is on screen
-	window.onscroll = function () {
+	window.onscroll = (map) => {
 		const sections = Object.keys(data);
 
 		for (let i = 0, l = sections.length; i < l; i++) {
@@ -35,6 +36,59 @@ function init(data, options) {
 	};
 }
 
+function addCensusLayer(data, options) {
+	const metric = '_median';
+
+	map.on('load', () => {
+		map.addSource('lst', {
+			type: 'geojson',
+			data: options.vectorLayer
+		});
+
+		// FILL
+		map.addLayer({
+			'id': 'fill',
+			'type': 'fill',
+			'source': 'lst',
+			'layout': {},
+			'paint': {
+			'fill-color': [
+					'step',
+					['get', metric],
+					'#fff5f0',
+					308.03,
+					'#fed6c4',
+					311.42,
+					'#fca487',
+					313,
+					'#fc7050',
+					314,
+					'#eb362a',
+					314.88,
+					'#ba1419',
+					316.1,
+					'#67000d',
+					321,
+					'#D1D2D4'
+				],
+				'fill-opacity': 0.45
+			}
+		});
+
+		// LINES
+		map.addLayer({
+			'id': 'line',
+			'type': 'line',
+			'source': 'lst',
+			'layout': {},
+			'paint': {
+        		'line-color': 'rgba(255,255,255, 0.25)',
+        		'line-width': 0.75
+        	}
+		});
+	});
+}
+
 function setActiveChapter(section, activeSection, data) {
 	if (section === activeSection) return;
 	 
@@ -45,11 +99,11 @@ function setActiveChapter(section, activeSection, data) {
 	 
 	activeSection = section;
 }
+
 function isElementOnScreen(id) {
 	var element = document.getElementById(id);
 	var bounds = element.getBoundingClientRect();
 
-	console.log(bounds.top, window.innerHeight)
 	return bounds.top < (window.innerHeight * 2) && bounds.bottom > 0;
 }
 

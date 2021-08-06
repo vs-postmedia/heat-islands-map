@@ -1,6 +1,5 @@
 import Map from '../Map/Map';
 import './App.css';
-// import mapboxConfig from '../../data/mapbox-config';
 
 // scrollytelling chapters
 import data from '../../../data/data';
@@ -8,16 +7,16 @@ import data from '../../../data/data';
 // map tiles & attribution
 const options = {
 	activeSection: 'baker',
-	bearing: 27,
-	center: [-0.15591514, 51.51830379],
-	mapboxStyle: 'https://api.maptiler.com/maps/outdoor/style.json?key=pRmETZ6APJE6l5kAzesF',
-	pitch: 45,
-	zoom:  15.5
+	bearing: 0,
+	center: [-123.0367753913065, 49.25366458504647],
+	mapboxStyle: 'https://api.maptiler.com/maps/369f7670-d39c-4dfa-9a78-732b33572503/style.json?key=arETEBBqRxRrA5v30F6H',
+	pitch: 15,
+	vectorLayer: 'https://api.maptiler.com/data/eb7f07e2-721c-48be-941f-278d7c665307/features.json?key=arETEBBqRxRrA5v30F6H',
+	zoom:  10
 };
 
 
 function init() {
-	console.log('App!')
 	Map.init(data, options);	
 }
 
