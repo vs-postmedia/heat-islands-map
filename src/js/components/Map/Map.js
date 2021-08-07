@@ -4,7 +4,7 @@ import maplibregl from 'maplibre-gl';
 import './Map.css';
 import './maplibre-gl.css';
 
-let map;
+let activeSection, map;
 
 
 function init(data, options) {
@@ -49,8 +49,6 @@ function init(data, options) {
 
 function addCensusLayer(options) {
 	const metric = '_median';
-
-	console.log(metric)
 
 	map.on('load', () => {
 		map.addSource('lst', {
@@ -133,7 +131,7 @@ function isElementOnScreen(id) {
 }
 
 function setActiveChapter(section, options, data) {
-	let activeSection = options.activeSection;
+	const activeSection = options.activeSection;
 
 	if (section === activeSection) return;
 	// if (section === 'step-01') changeMapStyle(data, options, options.mapboxStyle, true);
@@ -144,7 +142,7 @@ function setActiveChapter(section, options, data) {
 	document.getElementById(section).setAttribute('class', 'active');
 	document.getElementById(activeSection).setAttribute('class', '');
 	 
-	activeSection = section;
+	options.activeSection = section;
 }
 
 function setRasterLstLayer(options) {

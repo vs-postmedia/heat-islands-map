@@ -1,5 +1,6 @@
 :root {
 	--mapHeight: 700px;
+	--headerHeight: 60px;
 }
 
 
@@ -37,7 +38,8 @@
 #app footer {
 	display: flex;
 	position: fixed;
-	top: 90vh;
+	top: calc(var(--mapHeight) + var(--headerHeight));
+	width: 50%;
 }
 
 #app footer > p {
