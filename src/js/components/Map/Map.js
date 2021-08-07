@@ -26,6 +26,10 @@ function init(data, options) {
 		options.layer = getInputLayer('symbol');
 	});
 
+	// Add zoom and rotation controls to the map.
+	map.addControl(new maplibregl.NavigationControl());
+
+	// add choropleth
 	addCensusLayer(options);
 
 	// On every scroll event, check which element is on screen
