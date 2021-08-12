@@ -36,10 +36,10 @@
 }
 
 #app footer {
-	display: flex;
+	/*display: flex;*/
 	position: fixed;
 	top: calc(var(--mapHeight) + var(--headerHeight));
-	width: 50%;
+	width: 100%;
 }
 
 #app footer > p {

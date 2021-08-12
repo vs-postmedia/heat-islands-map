@@ -20,10 +20,38 @@
 	padding: 0;
 	position: relative;
 }
+
+#legend {
+	background: rgba(255,255,255,0.8);
+	border-radius: 3px;
+	display: flex;
+	height: 20px;
+	left: 10px;
+	padding: 7px;
+	position: fixed;
+	top: var(--headerHeight);
+	top: calc(var(--mapHeight) + var(--headerHeight) - 40px);
+	min-width: 200px;
+}
+#legend > * {
+	float: left;
+}
+#legend .legend-title {
+	flex: 6;
+	font-family: BentonSansCond-Bold, sans-serif;
+	margin-right: 10px;
+}
+#legend .gradient-bar {
+	background: linear-gradient(to right, #fffff0, #fed6c4, #fca487, #fc7050, #eb362a, #ba1419, #67000d);
+	margin: 0 4px;
+	opacity: 0.75;
+	width: 80px;
+}
 #features {
 	font-family: sans-serif;
 	margin-left: 5%;
 	overflow-y: hidden;
+	/*pointer-events: none;*/
 	position: relative;
 	width: 50%;
 	z-index: 0;
@@ -43,7 +71,7 @@ section.active {
 }
 section:last-child {
 	border-bottom: none;
-	margin-bottom: 200px;
+	margin-bottom: 100vh;
 }
 
 #features h3 {

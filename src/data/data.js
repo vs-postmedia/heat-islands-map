@@ -20,14 +20,14 @@ module.exports = {
 		duration: 2000,
 		zoom: 12
 	},
-	'new-west': {
-		center: [-122.9267075230023, 49.209624570510506],
-		duration: 1000,
+	'whalley': {
+		center: [-122.84558636810455, 49.193046709154544],
+		duration: 1500,
 		zoom: 12
 	},
 	'surrey': {
 		center: [-122.86797343302935, 49.148023064067324],
-		duration: 1500,
+		duration: 1000,
 		zoom: 12
 	},
 	'langley': {
@@ -36,5 +36,3 @@ module.exports = {
 		zoom: 12
 	},
 };
-
-
