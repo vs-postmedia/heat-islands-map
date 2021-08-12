@@ -30,6 +30,16 @@
 	width: 50%;
 	z-index: 0;
 }
+
+#features h3 {
+	margin: 7px 0 10px 0;
+}
+
+#features .italic {
+	font-family: 'BentonSansCond-BoldItalic';
+	padding-top: 5px;
+	text-align: center;
+}
 section {
 	background-color: rgba(255,255,255,0.8);
 	font-size: 0.9rem;
@@ -46,8 +56,4 @@ section.active {
 section:last-child {
 	border-bottom: none;
 	margin-bottom: 100vh;
-}
-
-#features h3 {
-	margin: 7px 0 10px 0;
 }
