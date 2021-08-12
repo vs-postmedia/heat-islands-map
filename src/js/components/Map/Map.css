@@ -2,7 +2,7 @@
 	bottom: 0;
 	height: var(--mapHeight);
 	position: fixed;
-	top: 60px;
+	top: var(--headerHeight);
 	width: 100%;
 }
 

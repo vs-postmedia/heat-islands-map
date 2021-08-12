@@ -15,7 +15,6 @@
   "license": "ISC",
   "dependencies": {
     "@babel/runtime": "^7.10.2",
-    "axios": "^0.21.1",
     "maplibre-gl": "^1.15.2"
   },
   "devDependencies": {
