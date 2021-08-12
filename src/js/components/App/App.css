@@ -29,8 +29,8 @@
 	left: 10px;
 	padding: 7px;
 	position: fixed;
-	top: var(--headerHeight);
-	top: calc(var(--mapHeight) + var(--headerHeight) - 40px);
+	top: calc(var(--headerHeight) + 10px);
+	/*top: calc(var(--mapHeight) + var(--headerHeight) - 40px);*/
 	min-width: 200px;
 }
 #legend > * {
