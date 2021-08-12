@@ -1,6 +1,6 @@
 :root {
 	--mapHeight: 600px;
-	--headerHeight: 40px;
+	--headerHeight: 45px;
 }
 
 
@@ -36,7 +36,6 @@
 }
 
 #app footer {
-	/*display: flex;*/
 	position: fixed;
 	top: calc(var(--mapHeight) + var(--headerHeight));
 	width: 100%;

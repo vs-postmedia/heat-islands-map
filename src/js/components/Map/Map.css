@@ -1,9 +1,35 @@
 #map {
 	bottom: 0;
 	height: var(--mapHeight);
+	max-width: 600px;
 	position: fixed;
 	top: var(--headerHeight);
 	width: 100%;
 }
 
-
+#legend {
+	background: rgba(255,255,255,0.8);
+	border-radius: 3px;
+	display: flex;
+	height: 20px;
+	left: 10px;
+	padding: 7px;
+	position: absolute;
+	top: calc(var(--headerHeight) + 10px);
+	/*top: calc(var(--mapHeight) + var(--headerHeight) - 40px);*/
+	min-width: 200px;
+}
+#legend > * {
+	float: left;
+}
+#legend .legend-title {
+	flex: 6;
+	font-family: BentonSansCond-Bold, sans-serif;
+	margin-right: 10px;
+}
+#legend .gradient-bar {
+	background: linear-gradient(to right, #fffff0, #fed6c4, #fca487, #fc7050, #eb362a, #ba1419, #67000d);
+	margin: 0 4px;
+	opacity: 0.75;
+	width: 80px;
+}
