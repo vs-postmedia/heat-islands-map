@@ -66,7 +66,7 @@ function addCensusLayer(options) {
 			'fill-color': [
 					'step',
 					['get', metric],
-					'rgba(255,245,240,0.45)',
+					'rgba(255,245,240,0.65)',
 					308.03,
 					'#fed6c4',
 					311.42,

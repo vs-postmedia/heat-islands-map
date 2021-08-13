@@ -6,7 +6,9 @@
 	top: var(--headerHeight);
 	width: 100%;
 }
-
+#map .maplibregl-ctrl-top-right {
+   	top: calc(var(--headerHeight) - 10px);
+}
 #legend {
 	background: rgba(255,255,255,0.8);
 	border-radius: 3px;
@@ -14,10 +16,8 @@
 	height: 20px;
 	left: 10px;
 	padding: 7px;
-	position: absolute;
-	top: calc(var(--headerHeight) + 10px);
-	/*top: calc(var(--mapHeight) + var(--headerHeight) - 40px);*/
-	min-width: 200px;
+	position: fixed;
+	top: calc(var(--headerHeight) * 2);
 }
 #legend > * {
 	float: left;
@@ -32,4 +32,14 @@
 	margin: 0 4px;
 	opacity: 0.75;
 	width: 80px;
+}
+
+
+@media only screen and (min-width: 425px) {
+	#legend {
+		top: calc(var(--headerHeight) + 10px);
+	}
+	#map .maplibregl-ctrl-top-right {
+    	top: 0;
+    }
 }

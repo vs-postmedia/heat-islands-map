@@ -24,10 +24,10 @@
 #features {
 	font-family: sans-serif;
 	margin-left: 5%;
+	max-width: 300px;
 	overflow-y: hidden;
 	/*pointer-events: none;*/
 	position: relative;
-	width: 50%;
 	z-index: 0;
 }
 
@@ -57,3 +57,4 @@ section:last-child {
 	border-bottom: none;
 	margin-bottom: 100vh;
 }
+
