@@ -1,0 +1,68 @@
+:root {
+	--mapHeight: 600px;
+	--headerHeight: 45px;
+}
+
+
+/* POSTMEDIA STYLES */
+#app h1 {
+	color: var(--black);
+	font-family: Shift-BoldItalic, serif;
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+}
+#app h2 {
+	color: var(--black);
+	font-family: BentonSansCond-Bold, sans-serif;
+	margin: 1px 0;
+}
+#app h3 {
+	color: var(--black);
+	font-family: BentonSansCond-Bold, sans-serif;
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+#app h4 {
+	color: var(--black);
+	font-family: BentonSansCond-Regular, sans-serif;
+	font-size: 0.8rem;
+}
+
+#app p {
+	color: var(--black);
+	font-family: BentonSansCond-Regular, Helvetica, sans-serif;
+	line-height: 1.3rem;
+	margin: 0;
+}
+
+#app footer {
+	position: fixed;
+	top: calc(var(--mapHeight) + var(--headerHeight));
+	width: 100%;
+}
+
+#app footer > p {
+	flex: 1;
+}
+
+#app .note,
+#app .source,
+#app .credit {
+	color: var(--grey02);
+	font-size: 0.8rem;
+}
+
+#app .credit {
+	text-align: right;
+}
+
+#app .source a {
+	color: inherit;
+}
+
+
+
+
+@media only screen and (min-width: 500px) {
+    /* Style adjustments for viewports that meet the condition */
+}

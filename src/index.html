@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		
+
+		<meta name="description" content="">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  		<!-- <link rel="manifest" href="site.webmanifest"> -->
+  		<link rel="apple-touch-icon" href="icon.png">
+  		<!-- Place favicon.ico in the root directory -->
+
+  		<meta name="theme-color" content="#fafafa">
+  		<title>Urban Heat Islands</title>
+	</head>
+
+	<body>
+		<!--[if IE]>
+    		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  		<![endif]-->
+
+  		<div id="app">
+			<h1>Metro’s wealthy stay cooler</h1>
+			<div id="scroller">
+				<div id="map"></div>
+				
+				<div id="legend">
+					<p class="legend-title">Surface temp. (°C)</p>
+					<p class="start-num">24</p>
+					<div class="gradient-bar"></div>
+					<p class="end-num">47</p>
+				</div>
+				<footer>
+					<p class="note">NOTE: Surface temperatures are typically several degrees higher than air temperature.</p>
+					<p class="source">Source: <a href="https://www.sentinel-hub.com/" target="_blank" rel="noopener">Sentinel Hub/ESA</a>, <a href="https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/dt-td/Rp-eng.cfm?LANG=E&APATH=3&DETAIL=0&DIM=0&FL=A&FREE=0&GC=0&GID=0&GK=0&GRP=1&PID=110193&PRID=10&PTYPE=109445&S=0&SHOWALL=0&SUB=0&Temporal=2016&THEME=119&VID=0&VNAMEE=&VNAMEF=" target="_blank" rel="noopener">Statistics Canada</a></p>
+				</footer>
+
+				<div id="features">
+					<section id="intro" class="active">
+						<p>Average surface temperature for Metro Vancouver census tracts on June 30, 2021, as measured by NASA’s Landsat 8 satellite. </p>
+						<p class="italic">Scroll for more...</p>
+					</section>
+					<section id="dtes">
+						<h3>DTES/Strathcona</h3>
+						<p>A lack of tree cover and parks in Strathcona and the DTES make these neighbourhoods some of the hottest in the city.</p>
+					</section>
+					<section id="west-van">
+						<h3>Vancouver’s west-side</h3>
+						<p>Large lots with plenty of tree cover keep Vancouver’s wealthier western neighbourhoods cool.</p>
+					</section>
+					<section id="burnaby">
+						<h3>East Van. and Burnaby</h3>
+						<p>Many lots in East Vancouver and parts of Burnbay are smaller than in western Vancouver, leaving less room for trees and other green space and pushing up temperatures.</p>
+					</section>
+					<section id="whalley">
+						<h3>Whalley</h3>
+						<p>Whalley’s median household income is the lowest in Surrey – and ground temperatures there were some of the hottest in the city.</p>
+					</section>
+					<section id="surrey">
+						<h3>Surrey</h3>
+						<p>Stretches of parking lots, roads and industry that absorb the sun’s heat raise the temperatures of neighbouring residential areas in Newton, which typically have lower incomes and fewer trees than South Surrey.</p>
+					</section>
+					<section id="langley">
+						<h3>Langley City</h3>
+						<p>Much of Langley City is covered with asphalt and other heat-absorbing materials from malls, parking lots and businesses, pushing ground temperatures to among the highest in the region.</p>	
+					</section>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
